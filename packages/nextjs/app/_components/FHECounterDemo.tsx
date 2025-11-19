@@ -53,7 +53,6 @@ export const FHECounterDemo = () => {
     instance: fhevmInstance,
     initialMockChains,
   });
-
   //////////////////////////////////////////////////////////////////////////////
   // UI Stuff:
   // --------

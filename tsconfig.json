@@ -8,7 +8,12 @@
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "baseUrl": ".",
+    "paths": {
+      "@fhevm-sdk": ["./packages/fhevm-sdk/src"],
+      "@fhevm-sdk/*": ["./packages/fhevm-sdk/src/*"]
+    }
   },
   "include": [
     "packages/**/*",

@@ -3,7 +3,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import { useDeployedContractInfo } from "../helper";
 import { useWagmiEthers } from "../wagmi/useWagmiEthers";
-import { FhevmInstance } from "@fhevm-sdk";
+import { useFhevmInstance } from "@fhevm-sdk";
 import {
   buildParamsFromAbi,
   getEncryptionMethod,

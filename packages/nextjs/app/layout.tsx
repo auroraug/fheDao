@@ -19,6 +19,7 @@ const DappWrapper = ({ children }: { children: React.ReactNode }) => {
         />
       </head>
       <body>
+        <script src="https://cdn.zama.org/relayer-sdk-js/0.3.0-5/relayer-sdk-js.umd.cjs"></script>
         <ThemeProvider enableSystem>
           <DappWrapperWithProviders>{children}</DappWrapperWithProviders>
         </ThemeProvider>

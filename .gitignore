@@ -1,11 +1,15 @@
 .env
-node_modules
 .DS_Store
 packages/*/node_modules
 packages/*/.DS_Store
-packages/*/dist
 packages/*/.env
 packages/*/.turbo
 packages/*/coverage
 tmp*
 .vscode
+**/node_modules/
+.cache
+.env.local
+*.log
+.pnpm-store/
+pnpm-debug.log*
