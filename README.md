@@ -2,7 +2,7 @@
 
 Privacy-preserving governance template built on Zama's FHEVM. It showcases a commit–reveal voting flow where individual votes remain private on-chain while final tallies become verifiable and public after decryption. Proposals can execute on-chain actions only when a decrypted majority approves.
 
-## What You Get
+## 🎁 What You Get
 
 - Privacy-first vote aggregation using FHE encrypted counters
 - Two-phase commit → reveal voting with membership gating
@@ -10,7 +10,7 @@ Privacy-preserving governance template built on Zama's FHEVM. It showcases a com
 - Proposal factory (CREATE2) with secure post-vote execution
 - React + Next.js frontend and Hardhat contracts, ready for local or Sepolia
 
-## Key Features
+## ⭐ Key Features
 
 - Privacy-Preserving Votes: Yes/No totals stored as `euint64` and aggregated on-chain without revealing individual votes.
 - Commit–Reveal Lifecycle: Commit hashed intent, reveal encrypted support to update FHE counters, then decrypt totals after voting ends.
@@ -19,7 +19,7 @@ Privacy-preserving governance template built on Zama's FHEVM. It showcases a com
 - Secure Execution Gate: Proposals execute only if `yes > no` after decryption and the DAO holds sufficient ETH.
 - Production-Ready FHEVM Primitives: Uses Zama FHEVM types and attestation verification for encrypted inputs and decryption proofs.
 
-## Architecture
+## 🏗️ Architecture
 
 ```
 fheDao/
@@ -34,9 +34,9 @@ fheDao/
 └── scripts/                      # ABI/type generation
 ```
 
-## Contracts Overview
+## 📜 Contracts Overview
 
-- `DAO.sol` — governance token, membership, proposal factory, and execution gate
+- `DAO.sol` — 🏛️ governance token, membership, proposal factory, and execution gate
   - Membership and proposals are permissioned by a Merkle whitelist and a proposal map.
   - Execution is gated and rewarded via a single entrypoint:
 
@@ -55,7 +55,7 @@ function executeProposal(
 }
 ```
 
-- `Proposal.sol` — FHE voting and guarded execution
+- `Proposal.sol` — 🗳️ FHE voting and guarded execution
   - Commit: hash your intent and salt, store once during the commit window.
 
 ```solidity
@@ -103,7 +103,7 @@ function execute() external {
 }
 ```
 
-## Governance Actions
+## ⚖️ Governance Actions
 
 - Treasury Management and Asset Operations
   - Treasury transfers and allocations
@@ -136,7 +136,7 @@ function execute() external {
   - Insurance policy acquisitions
   - Liquidity mining strategies
 
-## Reputation & Incentives
+## 🌟 Reputation & Incentives
 
 - Reveal-Only Rewards
   - Voters earn reputation (governance token) only when they complete the reveal step.
@@ -174,7 +174,7 @@ require(success, "Execution failed");
 _mint(_executor, 1);
 ```
 
-## Voting Lifecycle
+## 🗳️ Voting Lifecycle
 
 - Propose: Member calls `DAO.createProposal` with description, durations, and execution payload.
 - Commit: During `commitEnd`, voters submit commitments without revealing support.
@@ -182,15 +182,15 @@ _mint(_executor, 1);
 - Decrypt: After `revealEnd`, anyone submits oracle decryption result; contract verifies and persists plain totals.
 - Execute: If `yes > no`, proposal triggers payload via DAO and rewards executor.
 
-## Quick Start
+## 🚀 Quick Start
 
-### Prerequisites
+### 🧰 Prerequisites
 
 - Node.js v20+ (required by the workspace engines; FHEVM SDK works best on 20+)
 - pnpm
 - MetaMask
 
-### Setup
+### 🔧 Setup
 
 ```bash
 git clone <repository-url>
@@ -198,11 +198,11 @@ cd fheDao
 pnpm install
 ```
 
-### Environment
+### 🧾 Environment
 
 - Set `MNEMONIC` and any RPC keys as needed following Zama's Hardhat setup guide.
 
-### Run Locally
+### 🖥️ Run Locally
 
 ```bash
 # Terminal 1: start local chain
@@ -217,14 +217,14 @@ pnpm start
 
 Local RPC: `http://127.0.0.1:8545` | Chain ID: `31337`
 
-### Deploy to Sepolia
+### ☁️ Deploy to Sepolia
 
 ```bash
 pnpm deploy:sepolia
 pnpm start
 ```
 
-### Fastest Start (Sepolia Demo)
+### ⚡ Fastest Start (Sepolia Demo)
 
 - Prepare
   - Node.js v20+, pnpm, MetaMask
@@ -237,33 +237,33 @@ pnpm start
 
 No redeploy required for the demo. To redeploy your own instance with a custom whitelist, run `pnpm deploy:sepolia` and update frontend config as needed.
 
-### Useful Scripts
+## 🛠️ Useful Scripts
 
 - Compile: `pnpm compile`
 - Test (contracts): `pnpm test`
 - Lint: `pnpm lint`
 - Typecheck: `pnpm next:check-types` and `pnpm hardhat:check-types`
 
-## Frontend Notes
+## 💻 Frontend Notes
 
 - Connect MetaMask and switch to the appropriate network.
 - Update deployed addresses in `packages/hardhat/deployments/*/DAO.json` and ensure the frontend reads them.
 - For production on Sepolia, set `NEXT_PUBLIC_ALCHEMY_API_KEY` and optional `NEXT_PUBLIC_WALLET_CONNECT_PROJECT_ID`.
 
-### Demo Whitelist
+### ✅ Demo Whitelist
 
 - The demo DAO is initialized with a whitelist of 10 addresses derived from Hardhat default accounts (test keys), suitable for demonstrations only. If you want different participants, regenerate your Merkle root and redeploy.
 
-## Troubleshooting
+## 🛠️ Troubleshooting
 
 - MetaMask nonce/cache issues are common when restarting Hardhat. Clear MetaMask activity or restart the browser to flush cached results.
 
-## Resources
+## 🔗 Resources
 
 - Zama FHEVM Docs: https://docs.zama.ai/protocol/solidity-guides/
 - Hardhat Guide: https://docs.zama.ai/protocol/solidity-guides/development-guide/hardhat
 - Relayer & Oracle Decryption: https://docs.zama.ai/protocol/relayer-sdk-guides/
 
-## License
+## 📄 License
 
 BSD-3-Clause-Clear. See `LICENSE`.
