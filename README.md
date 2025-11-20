@@ -2,6 +2,11 @@
 
 Privacy-preserving governance template built on Zama's FHEVM. It showcases a commit–reveal voting flow where individual votes remain private on-chain while final tallies become verifiable and public after decryption. Proposals can execute on-chain actions only when a decrypted majority approves.
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![Built with FHEVM](https://img.shields.io/badge/Built%20with-Zama%20FHEVM-blue)](https://docs.zama.ai/fhevm)
+[![Solidity](https://img.shields.io/badge/Solidity-0.8.24-363636?logo=solidity)](https://soliditylang.org/)
+[![Live Demo](https://img.shields.io/badge/demo-live-success)](https://fhedao.vercel.app)
+
 ## 🎁 What You Get
 
 - Privacy-first vote aggregation using FHE encrypted counters
@@ -266,4 +271,4 @@ No redeploy required for the demo. To redeploy your own instance with a custom w
 
 ## 📄 License
 
-BSD-3-Clause-Clear. See `LICENSE`.
+This project is licensed under the MIT License.
